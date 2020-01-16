@@ -8,3 +8,8 @@
 - `composer install`
 - `cp .env.example .env`
 - `php artisan key:generate`
+
+### Env variables
+
+- `GITHUB_USERNAME` - GitHub username for API auth
+- `GITHUB_TOKEN` - GitHub personal token for API auth
