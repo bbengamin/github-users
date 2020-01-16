@@ -10,7 +10,13 @@ class UsersController extends Controller
 
     public function index(Request $request)
     {
-        return ['users' => []];
+        $users = [];
+
+        if ($request->has("q")) {
+            $users[] = ['id' => 1];
+        }
+
+        return ['users' => $users];
     }
 
 }
