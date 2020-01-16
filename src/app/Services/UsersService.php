@@ -27,10 +27,9 @@ class UsersService
         $response = $this->client->request('GET', $url);
         if ($response->getStatusCode() == 200) {
             $body = json_decode($response->getBody());
-
             $handler = new AdditionalFieldsHandler($this->client, $this->additionalFields);
-            $promises = collect($body->items)->flatMap($handler);
 
+            $promises = collect($body->items)->flatMap($handler);
             $this->waitAll($promises);
 
             $users = $body->items;

@@ -1,3 +1,8 @@
+### Endpoints
+
+`GET` - `/api/users` - retrieve first page of users list from GitHub API with their followers and repos. 
+To extract additional field I've used `GuzzleRequest::sendAsync` method. 
+
 ### Docker
 
 - Run `docker-compose up -d` to up docker container
@@ -6,7 +11,7 @@
 ### Init project
 
 - `composer install`
-- `cp .env.example .env`
+- `cp envexample .env`
 - `php artisan key:generate`
 
 ### Env variables

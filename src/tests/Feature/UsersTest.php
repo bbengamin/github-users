@@ -7,17 +7,19 @@ use Tests\TestCase;
 class UsersTest extends TestCase
 {
 
+    const API_USERS = '/api/users';
+
     public function testEmptyResponse()
     {
-        $response = $this->get('/api/users');
+        $response = $this->get(self::API_USERS);
 
         $response->assertStatus(200);
         $response->assertJsonStructure(['users']);
     }
 
-    public function testResponseWithQuert()
+    public function testResponseWithQuery()
     {
-        $response = $this->get('/api/users?q=test');
+        $response = $this->get(self::API_USERS . '?q=test');
 
         $response->assertStatus(200);
         $response->assertJsonStructure([
