@@ -25,9 +25,12 @@ class UsersTest extends TestCase
                 '*' => [
                     'id',
                     'followers_url',
+                    'followers',
+                    'repos',
                     'repos_url',
                 ]
             ]
         ]);
     }
+
 }
